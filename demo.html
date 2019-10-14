@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>翻面</title>
+    <style type="text/css">
+        .box{
+            width:300px;
+            height:272px;
+            margin:50px auto 0;
+            transform-style:preserve-3d;
+            -webkit-transform-style:preserve-3d;
+            position:relative;
+            transform: perspective(1000px);
+            -webkit-transform: perspective(1000px);
+        }
+        .box .pic{
+            width:300px;
+            height:272px;
+            position:absolute;
+            background-color:cyan;
+            left:0;
+            top:0;
+            transform:rotateY(0deg);
+            -webkit-transform:rotateY(0deg);
+            /*transform:perspective(1000px) rotateY(0deg);*/
+            backface-visibility:hidden;
+            -webkit-backface-visibility:hidden;
+            transition:all 500ms ease;
+            -webkit-transition:all 500ms ease;
+        }
+        .box .back_info{
+            width:300px;
+            height:272px;
+            text-align:center;
+            line-height:272px;
+            background-color:gold;
+            position:absolute;
+            left:0;
+            top:0;
+            transform:rotateY(180deg);
+            backface-visibility:hidden;
+            -webkit-backface-visibility:hidden;
+            transition:all 500ms ease;
+            -webkit-transition:all 500ms ease;
+        }
+        .box:hover .pic{
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+        }
+        .box:hover .back_info{
+            transform:rotateY(0deg);
+            -webkit-transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box">
+        <div class="pic"></div>
+        <div class="back_info">背面文字说明</div>
+    </div>
+</div>
+
+</body>
+</html>

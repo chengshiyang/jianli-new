@@ -1,0 +1,7 @@
+img,ul,li,h1,h3 p{
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
